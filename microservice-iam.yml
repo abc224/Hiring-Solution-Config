@@ -1,2 +1,6 @@
 server:
   port: 9001
+
+management:
+  endpoint.gateway.enabled: true
+  endpoints.web.exposure.include: gateway
