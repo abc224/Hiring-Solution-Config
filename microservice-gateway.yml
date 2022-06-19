@@ -14,3 +14,7 @@ spring:
           uri : lb://microservice-profil
           predicates :
             - Path= /profil/**
+        - id : candidature-service
+          uri : lb://microservice-candidature
+          predicates :
+            - Path= /candidature/**
