@@ -9,6 +9,15 @@ spring:
     discovery:
       enabled: true
     gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:4200"
+            allowedHeaders: "*"
+            allowedMethods: 
+            - GET
+            - POST
+            - PUT
       routes:
         - id : profil-service
           uri : lb://microservice-profil
@@ -18,14 +27,4 @@ spring:
           uri : lb://microservice-candidature
           predicates :
             - Path= /candidature/**
-spring:
-  cloud:
-    gateway:
-      globalcors:
-        corsConfigurations:
-          '[/**]':
-            allowedOrigins: "http://localhost:4200"
-            allowedHeaders: "*"
-            allowedMethods:
-            - GET
-            - POST
+
